@@ -1,13 +1,12 @@
-# Getting Started with Create React App
+## Gege's Confectionaries
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a confectionaries shop where you can order cakes and go through the various sweet and savory options built with React. 
 
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `yarn start`
-
 
 
 ### `yarn test`
@@ -25,6 +24,4 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Gege's Confectionaries
 
-This is a confectionaries shop where you can order cakes and go through the various sweet and savory options built with React. 
