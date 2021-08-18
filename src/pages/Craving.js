@@ -1,16 +1,16 @@
 import React from "react";
-import { SavoryMenuList } from "../inventory/SavoryMenuList";
+import { CravingMenuList } from "../inventory/CravingMenuList";
 import MenuItem from "../components/MenuItem";
 import '../styles/Menu.css';
 
-function Savory() {
+function Craving() {
   return (
     <div>
       <div className="menu">
-        <h1 className="menuTitle">Savory</h1>
+        <h1 className="menuTitle">Craving</h1>
         {/* loop through array and automatically render each item */}
         <div className="menuList">
-          {SavoryMenuList.map((menuItem, key) => {
+          {CravingMenuList.map((menuItem, key) => {
             return (
               <MenuItem
               key={key}
@@ -26,4 +26,4 @@ function Savory() {
   );
 }
 
-export default Savory;
+export default Craving;

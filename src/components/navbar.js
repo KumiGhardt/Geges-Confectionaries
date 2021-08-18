@@ -23,7 +23,7 @@ function Navbar() {
           <Link to="/"> Home</Link>
           <Link to="/Sweet"> Sweet</Link>
           <Link to="/Savory"> Savory</Link>
-          <Link to="/GuiltyPleasure"> GuiltyPleasure</Link>
+          <Link to="/Craving"> Craving</Link>
           <Link to="/Cart"></Link>
         </div>
       </div>
@@ -31,7 +31,7 @@ function Navbar() {
         <Link to="/"> Home</Link>
         <Link to="/Sweet"> Sweet</Link>
         <Link to="/Savory"> Savory</Link>
-        <Link to="/GuiltyPleasure"> GuiltyPleasure</Link>
+        <Link to="/Craving"> Craving</Link>
         <Link to="/Cart"><ShoppingCartIcon /></Link>
         {/* toggles the hanburger on the navbar when it appears on click */}
         <button onClick={toggleNavbar}>

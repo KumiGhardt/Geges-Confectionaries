@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BackgroundImage from '../media/geges.png';
+import BackgroundImage from '../media/background.png';
 import '../styles/Home.css';
 
 function Home() {
