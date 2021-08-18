@@ -1,10 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import BackgroundImage from '../media/geges.png';
+import '../styles/Home.css';
 
 function Home() {
     return (
-        <div>
-            <h1>Gege's Confectionaries</h1>
-        </div>
+       <div className="home" style={{ backgroundImage: `url(${BackgroundImage})` }}>
+                <h1 className="mainTitle">Gege's Confectionaries</h1>
+                <p>Tag Line!</p>
+                <Link to="/Sweet"><button>Sweet</button></Link>
+                <Link to="/Savory"><button>Savory</button></Link>
+                <Link to="/Guilty Pleasure"><button>Guilty Pleasure</button></Link>
+           </div>
     )
 }
 
