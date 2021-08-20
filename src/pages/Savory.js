@@ -1,5 +1,5 @@
 import React from "react";
-import { SavoryMenuList } from "../inventory/SavoryMenuList";
+import { menuList } from "../inventory/menuList";
 import MenuItem from "../components/MenuItem";
 import '../styles/Menu.css';
 
@@ -10,12 +10,13 @@ function Savory() {
         <h1 className="menuTitle">Savory</h1>
         {/* loop through array and automatically render each item */}
         <div className="menuList">
-          {SavoryMenuList.map((menuItem, key) => {
+          {menuList.map((menuItem, key) => {
             return (
               <MenuItem
               key={key}
                 image={menuItem.image}
                 item={menuItem.item}
+                description={menuItem.description}
                 price={menuItem.price}
               />
             );

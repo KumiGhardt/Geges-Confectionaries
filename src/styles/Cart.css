@@ -1,0 +1,50 @@
+.cart {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #724563;
+    
+  }
+  .cart .cartTitle {
+    font-size: 50px;
+    
+  }
+
+  .cartItem {
+    width: 70vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+  }
+
+  .cartItem:hover {
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+  }
+
+  .paymentSelection {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+        padding: 30px;
+        color: #724563;
+        
+  }
+
+
+  input {
+    margin-top: 40px;
+    width: 140px;
+    height: 40px;
+    border: none;
+    background-color: #724563;
+    color: whitesmoke;
+    font-size: 15px;
+    cursor: pointer;
+  }

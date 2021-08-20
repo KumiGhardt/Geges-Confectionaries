@@ -6,7 +6,9 @@ import Home from './pages/Home';
 import Sweet from './pages/Sweet';
 import Savory from './pages/Savory';
 import Craving from './pages/Craving';
+import Contact from './pages/Contact';
 import Footer from './components/footer';
+import Cart from './pages/Cart';
 
 
 
@@ -22,6 +24,9 @@ function App() {
         <Route path="/sweet" exact component={Sweet} />
         <Route path="/savory" exact component={Savory} />
         <Route path="/craving" exact component={Craving} />
+        <Route path="/contact" exact component={Contact} />
+        {/* cart */}
+        <Route path="/cart" exact component={Cart} />
       </Switch>
       <Footer />
       </Router>

@@ -1,26 +1,32 @@
 import React from "react";
-import { SweetMenuList } from "../inventory/SweetMenuList";
+import { menuList } from "../inventory/menuList";
 import MenuItem from "../components/MenuItem";
 import '../styles/Menu.css';
 
 function Sweet() {
+  
+  // const [menuItem] = useState();
+
   return (
     <div>
       <div className="menu">
         <h1 className="menuTitle">Sweet</h1>
         {/* loop through array and automatically render each item */}
         <div className="menuList">
-          {SweetMenuList.map((menuItem, key) => {
+          {menuList.map((menuItem, key) => {
             return (
               <MenuItem
-              key={key}
+              key={menuItem._id}
                 image={menuItem.image}
                 item={menuItem.item}
+                description={menuItem.description}
                 price={menuItem.price}
               />
             );
           })}
+          
         </div>
+        
       </div>
     </div>
   );

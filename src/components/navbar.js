@@ -5,6 +5,7 @@ import ReorderIcon from "@material-ui/icons/Reorder";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import "../styles/Navbar.css";
 
+
 function Navbar() {
     // useState hook to show/hide navbar links
     const [openLinks, setOpenLinks] = useState(false);
@@ -12,6 +13,7 @@ function Navbar() {
     const toggleNavbar = () => {
         setOpenLinks(!openLinks);
       };
+
 
   return (
       
@@ -24,7 +26,8 @@ function Navbar() {
           <Link to="/Sweet"> Sweet</Link>
           <Link to="/Savory"> Savory</Link>
           <Link to="/Craving"> Craving</Link>
-          <Link to="/Cart"></Link>
+          <Link to="/Contact"> Contact</Link>
+          <Link to="/Cart"><ShoppingCartIcon /></Link>
         </div>
       </div>
       <div className="rightSide">
@@ -32,6 +35,7 @@ function Navbar() {
         <Link to="/Sweet"> Sweet</Link>
         <Link to="/Savory"> Savory</Link>
         <Link to="/Craving"> Craving</Link>
+        <Link to="/Contact"> Contact</Link>
         <Link to="/Cart"><ShoppingCartIcon /></Link>
         {/* toggles the hanburger on the navbar when it appears on click */}
         <button onClick={toggleNavbar}>
@@ -43,3 +47,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
