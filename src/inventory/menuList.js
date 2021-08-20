@@ -15,7 +15,7 @@ const craving = "craving"
 
 export const menuList = [
 {
-    _id: "sweet1",
+    id: "sweet1",
     category: sweet,
     item: "Birthday cake" ,
     image: angelcake,
@@ -24,7 +24,7 @@ export const menuList = [
 },
 
 {
-    _id: "sweet2",
+    id: "sweet2",
     category: sweet,
     item: "Cupcakes",
     image: Cupcakes,
@@ -32,7 +32,7 @@ export const menuList = [
     price: 45
 },
 {
-    _id: "sweet3",
+    id: "sweet3",
     category: sweet,
     item: "Raspberry Cake",
     image: birthdaycake,
@@ -40,7 +40,7 @@ export const menuList = [
     price: 65,
 },
 {
-    _id: "sweet4",
+    id: "sweet4",
     category: sweet,
     item: "Cookies",
     image: Cookies,
@@ -48,7 +48,7 @@ export const menuList = [
     price: 12.99
 },
 {
-    _id: "sweet5",
+    id: "sweet5",
     category: sweet,
     item: "Cupcake Messages",
     image: Gifts,
@@ -56,7 +56,7 @@ export const menuList = [
     price: 75
 },
 {
-    _id: "savory1",
+    id: "savory1",
     category: savory,
     item: "Garlic Bread",
     image: Garlicbread,
@@ -64,7 +64,7 @@ export const menuList = [
     price: 75
 },
 {
-    _id: "savory2",
+    id: "savory2",
     category: savory,
     item: "Pizza",
     image: Pizza,
@@ -72,7 +72,7 @@ export const menuList = [
     price: 69
 },
 {
-    _id: "craving1",
+    id: "craving1",
     category: craving,
     item: "Raspberry cheesecake" ,
     image: raspberrycheesecake,

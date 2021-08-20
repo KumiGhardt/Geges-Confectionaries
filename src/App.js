@@ -10,6 +10,8 @@ import Contact from './pages/Contact';
 import Footer from './components/footer';
 import Cart from './pages/Cart';
 
+import { CartProvider } from "react-use-cart";
+
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
       <Switch>
         {/* homepage */}
         <Route path="/" exact component={Home} />
+        <CartProvider>
         {/* inventory */}
         <Route path="/sweet" exact component={Sweet} />
         <Route path="/savory" exact component={Savory} />
@@ -27,6 +30,7 @@ function App() {
         <Route path="/contact" exact component={Contact} />
         {/* cart */}
         <Route path="/cart" exact component={Cart} />
+        </CartProvider>
       </Switch>
       <Footer />
       </Router>

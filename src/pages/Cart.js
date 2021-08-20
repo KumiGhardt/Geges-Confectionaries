@@ -1,90 +1,86 @@
 import React from "react";
 import "../styles/Cart.css";
-//import { menuList } from "../inventory/menuList";
-//import MenuItem from "../components/MenuItem";
-//import { totalmem } from "node:os";
-
+import { useCart } from "react-use-cart";
 
 function Cart() {
-  const cart = [];
-  const setCart = [];
+  const {
+    isEmpty,
+    items,
+    totalItems,
+    cartTotal,
+    updateItemQuantity,
+    removeItem,
+    emptyCart,
+  } = useCart();
 
+  if (isEmpty) return <p>Your cart is empty.</p>;
 
-  // get sum total
-  const getTotalSum = () => {
-    return cart.reduce(
-      (sum, { cost, quantity }) => sum + cost * quantity,
-      0
-    );
-  };
+  return (
+    <div className="cart">
+      <h1>Cart Items:({totalItems})</h1>
 
-// remove item from cart
-const removeItem = (MenuItem) => {
-  //remove item from cart
-}
+      <div className="cartItem">
+        {items.map((menuItem, key) => {
+          // if (menuItem === sweet) {
+          return (
+            <tr key={menuItem._id}>
+              <td>{menuItem.image}</td>
+              <td>{menuItem.item}</td>
+              <td>{menuItem.description}</td>
+              <td>{menuItem.price}</td>
+              <td>
+                <button
+                  className="btn btn-info"
+                  onClick={() =>
+                    updateItemQuantity(menuItem.id, menuItem.quantity - 1)
+                  }
+                >
+                  -
+                </button>
+                <button
+                  className="btn btn-info"
+                  onClick={() =>
+                    updateItemQuantity(menuItem.id, menuItem.quantity + 1)
+                  }
+                >
+                  +
+                </button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() =>
+                    removeItem(menuItem.id, menuItem.quantity - 1)
+                  }
+                >
+                  Remove
+                </button>
+              </td>
+            </tr>
+          );
+        })}
+      </div>
 
-//clear cart
-const clearCart = () => {
-  setCart([]);
-}
+      <p>You have {totalItems} in your cart</p>
+      <p>Total Cost: MWK {cartTotal}</p>
 
-//number of items in cart
-const setQuantity = (product, amount) => {
-  const newCart = [...cart];
-  newCart.find(
-    (item) => item.name === product.name
-  ).quantity = amount;
-  setCart(newCart);
-};
+      <button className="btn btn-danger" onClick={() => emptyCart()}>
+        Empty Cart
+      </button>
 
-
-return (
-
- 
-  <div className="cart">
-    <h1>Cart</h1>
-    {cart.length > 0 && (
-      <button onClick={clearCart}>Clear Cart</button>
-    )}
-    <div className="cartItem">
-      {cart.map((menuItem, id) => (
-        <div className="menuItem" key={id}>
-          <h3>{menuItem.name}</h3>
-          <h4>${menuItem.cost}</h4>
-          <input
-            value={menuItem.quantity}
-            onChange={(e) =>
-              setQuantity(
-                menuItem,
-                parseInt(e.target.value)
-              )
-            }
-          />
-          <img src={menuItem.image} alt={menuItem.name} />
-          <button onClick={() => removeItem(menuItem)}>
-            Remove
-          </button>
+      <div className="Payment">
+        <p>You will pay by:</p>
+        <div className="paymentSelection">
+          <select>
+            <option value="mo626">MO626</option>
+            <option value="Mpamba">Mpamba</option>
+            <option selected value="Airtel money">
+              Airtel money
+            </option>
+          </select>
+          <input type="submit" value="Submit">Submit Order</input>
         </div>
-      ))}
+      </div>
     </div>
-
-    <div>Total Cost: ${getTotalSum()}</div>
-
-    <div className="Payment">
-          <p>You will pay by:</p>
-          <div className="paymentSelection">
-            <select>
-              <option value="mo626">MO626</option>
-              <option value="Mpamba">Mpamba</option>
-              <option selected value="Airtel money">
-                Airtel money
-              </option>
-            </select>
-            <input type="submit" value="Submit" />
-          </div>
-        </div>
-  </div>
-);
+  );
 }
 
 export default Cart;
