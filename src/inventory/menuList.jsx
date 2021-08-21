@@ -36,7 +36,7 @@ export const menuList = [
     category: sweet,
     title: "Raspberry Cake",
     image: birthdaycake,
-    description: "This raspberrycake",
+    description: "This is a delicious raspberrycake",
     price: 65,
 },
 {
@@ -52,7 +52,7 @@ export const menuList = [
     category: sweet,
     title: "Cupcake Messages",
     image: Gifts,
-    description: "These are cupcakes arranges as a bouquet of roses",
+    description: "These are cupcakes arranged as a bouquet of roses",
     price: 75
 },
 {

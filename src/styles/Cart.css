@@ -29,6 +29,8 @@
     cursor: pointer;
   }
 
+
+
   .paymentSelection {
         display: flex;
         flex-direction: column;
@@ -37,6 +39,14 @@
         padding: 30px;
         color: #724563;
         
+  }
+
+  .title {
+    width: 20%;
+  }
+
+  .description {
+    width: 50%
   }
 
   .btn-add,
@@ -53,18 +63,24 @@
     cursor: pointer;
   }
 
+  .cart p {
+    font-weight: bolder;
+  }
+
   .btn-empty {
     float: right;
     margin-right: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     width: 80px;
-    height: 40px;
+    height: 50px;
     border: none;
     border-radius: 12px;
-    background-color: red;
-    color: whitesmoke;
+    background-color: #FCEDE5;
+    color: #724563;
+    font-weight: bolder;
     font-size: 15px;
     cursor: pointer;
+   
   }
 
   .submit {

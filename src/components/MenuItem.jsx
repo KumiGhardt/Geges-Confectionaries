@@ -4,8 +4,6 @@ import { useCart } from "react-use-cart";
 import '../styles/Menu.css';
 
 
-
-
 function MenuItem(item) {
 
   const { addItem } = useCart();

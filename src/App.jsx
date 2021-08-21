@@ -9,6 +9,7 @@ import Craving from './pages/Craving';
 import Contact from './pages/Contact';
 import Footer from './components/footer';
 import Cart from './pages/Cart';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { CartProvider } from "react-use-cart";
 
