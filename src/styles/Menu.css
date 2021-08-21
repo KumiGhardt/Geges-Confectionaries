@@ -10,6 +10,7 @@
     font-size: 50px;
   }
   
+  
   .menuList {
     width: 70vw;
     height: auto;
@@ -60,7 +61,7 @@
     color: #724563;
     background-color: #FCEDE5;
     border: none;
-    border-radius: 20%;
+    border-radius: 20px;
   }
   
   @media only screen and (max-width: 1300px) {

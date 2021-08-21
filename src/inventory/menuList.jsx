@@ -17,7 +17,7 @@ export const menuList = [
 {
     id: "sweet1",
     category: sweet,
-    item: "Birthday cake" ,
+    title: "Birthday cake" ,
     image: angelcake,
     description: "This a vanilla angel cake",
     price: 50
@@ -26,7 +26,7 @@ export const menuList = [
 {
     id: "sweet2",
     category: sweet,
-    item: "Cupcakes",
+    title: "Cupcakes",
     image: Cupcakes,
     description: "These are cupcakes",
     price: 45
@@ -34,7 +34,7 @@ export const menuList = [
 {
     id: "sweet3",
     category: sweet,
-    item: "Raspberry Cake",
+    title: "Raspberry Cake",
     image: birthdaycake,
     description: "This raspberrycake",
     price: 65,
@@ -42,7 +42,7 @@ export const menuList = [
 {
     id: "sweet4",
     category: sweet,
-    item: "Cookies",
+    title: "Cookies",
     image: Cookies,
     description: "These are vanilla cookies",
     price: 12.99
@@ -50,7 +50,7 @@ export const menuList = [
 {
     id: "sweet5",
     category: sweet,
-    item: "Cupcake Messages",
+    title: "Cupcake Messages",
     image: Gifts,
     description: "These are cupcakes arranges as a bouquet of roses",
     price: 75
@@ -58,7 +58,7 @@ export const menuList = [
 {
     id: "savory1",
     category: savory,
-    item: "Garlic Bread",
+    title: "Garlic Bread",
     image: Garlicbread,
     description: "This is garlicbread with cheese",
     price: 75
@@ -66,7 +66,7 @@ export const menuList = [
 {
     id: "savory2",
     category: savory,
-    item: "Pizza",
+    title: "Pizza",
     image: Pizza,
     description: "This salami pizza",
     price: 69
@@ -74,7 +74,7 @@ export const menuList = [
 {
     id: "craving1",
     category: craving,
-    item: "Raspberry cheesecake" ,
+    title: "Raspberry cheesecake" ,
     image: raspberrycheesecake,
     description: "This is a raspberry and cheesecake slice",
     price: 10

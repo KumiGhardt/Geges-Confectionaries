@@ -4,18 +4,27 @@ import MenuItem from "../components/MenuItem";
 import '../styles/Menu.css';
 
 function Savory() {
+    // get the savory category from inventory
+  function isSavory(value) {
+    return value.category === "savory";
+   }
+  // filter for items with savory category
+  const savoryItems = menuList.filter(isSavory);
+  
   return (
     <div>
       <div className="menu">
         <h1 className="menuTitle">Savory</h1>
         {/* loop through array and automatically render each item */}
-        <div className="menuList">
-          {menuList.map((menuItem, key) => {
+        <div className="menuList" key="uniqueId1">
+          {savoryItems.map((menuItem, index) => {
+            // if (menuItem === sweet) {
             return (
               <MenuItem
-              key={key}
+                key={index}
+                id={menuItem.id}
                 image={menuItem.image}
-                item={menuItem.item}
+                title={menuItem.title}
                 description={menuItem.description}
                 price={menuItem.price}
               />

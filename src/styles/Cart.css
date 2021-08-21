@@ -16,10 +16,12 @@
   .cartItem {
     width: 70vw;
     height: auto;
-    display: grid;
+    flex-direction: column;
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
   }
+
+
 
   .cartItem:hover {
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
@@ -37,22 +39,40 @@
         
   }
 
-  .cart p {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #724563;
-  }
-
-
-  input {
-    margin-top: 40px;
-    width: 140px;
+  .btn-add,
+  .btn-remove,
+  .btn-delete {
+    margin: 40px;
+    width: 40px;
     height: 40px;
     border: none;
+    border-radius: 30px;
+    background-color: #724563;
+    color: whitesmoke;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .btn-empty {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background-color: red;
+    color: whitesmoke;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .submit {
+    margin: 40px;
+    width: 90px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
     background-color: #724563;
     color: whitesmoke;
     font-size: 15px;

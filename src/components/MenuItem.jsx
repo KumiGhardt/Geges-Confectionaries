@@ -6,21 +6,21 @@ import '../styles/Menu.css';
 
 
 
-function MenuItem({ image, item, description, price, id }) {
+function MenuItem(item) {
 
   const { addItem } = useCart();
 
   return (
-    <div key={id} className="menuItem">
+    <div key={item.id} className="menuItem">
       <div
         className="image"
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url(${item.image})` }}
         
       ></div>
-      <h1 key={id}>{item}</h1>
-      <p>{description}</p>
+      <h1>{item.title}</h1>
+      <p>{item.description}</p>
       <div className="pay">
-      <p>MWK {price}</p>
+      <p>MWK {item.price}</p>
       {/* click buttom to add the menuitem to the cart */}
       <button className="cartIcon" onClick={() => addItem(item)}><AddShoppingCartIcon/></button>
       </div>
