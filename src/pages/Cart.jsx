@@ -14,13 +14,23 @@ import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined'
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 
+
+//order confirmation
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 
 function Cart() {
-  //anchorEl passes the location of the button that called it
+  //anchorEl passes the location of the button that called it on payment method
   const [anchorEl, setAnchorEl] = React.useState(null);
+  //order sumisssion
+  const [open, setOpen] = React.useState(false);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -28,6 +38,7 @@ function Cart() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
 
   const {
     isEmpty,
@@ -40,6 +51,19 @@ function Cart() {
   } = useCart();
 
   if (isEmpty) return <p>Your cart is empty.</p>;
+
+  
+  const handleSubmitClick = () => {
+    setOpen(true);
+  };
+
+  const handleSubmitClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
     <div className="cart">
@@ -115,9 +139,17 @@ function Cart() {
             <MenuItem onClick={handleClose}>Mo626</MenuItem>
             <MenuItem onClick={handleClose}>Airtel Money</MenuItem>
           </Menu>
+
+          {/* await selection and reflect selection */}
+
         </div>
         <div className="submit">
-          <Button variant="contained" color='primary' onClick={() => { alert('Order Submitted') }}>Submit Order</Button>
+          <Button variant="contained" color='primary'onClick={handleSubmitClick}>Submit Order</Button>
+          <Snackbar open={open} autoHideDuration={2000} onClose={handleSubmitClose}>
+        <Alert onClose={handleSubmitClose} severity="success">
+          Your order is submitted!
+        </Alert>
+      </Snackbar>
         </div>
       </div>
     </div>
