@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Cart.css";
 import { useCart } from "react-use-cart";
+import Grid from "@material-ui/core/Grid";
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,12 +11,23 @@ import Button from '@material-ui/core/Button';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import RemoveCircleOutlineOutlinedIcon from '@material-ui/icons/RemoveCircleOutlineOutlined';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
-import TextField from '@material-ui/core/TextField';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+
 
 
 
 function Cart() {
-
+  //anchorEl passes the location of the button that called it
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  //close menu
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const {
     isEmpty,
@@ -46,7 +58,7 @@ function Cart() {
                   <TableCell><img src={menuItem.image} alt="item_image" width="50px" height="50px" /></TableCell>
                   <TableCell className="title">{menuItem.title}</TableCell>
                   <TableCell className="description">{menuItem.description}</TableCell>
-                  <TableCell className="price">MWK {menuItem.price}</TableCell>
+                  <TableCell className="price">MWK {menuItem.price} each</TableCell>
                   <TableCell>
                     <Button
                       className="btn-remove" variant="outlined" style={{ color: '#724563' }}
@@ -78,40 +90,34 @@ function Cart() {
             </Table>
           );
         })}
-        <button className="btn-empty" onClick={() => emptyCart()}>
-          Empty Cart
-        </button>
+        <Grid container justify="flex-end">
+          <Button variant="contained" color='secondary' className="emptyCart" style={{ height: 40 }} onClick={() => emptyCart()}>
+            Empty Cart
+          </Button>
+        </Grid>
       </div>
 
-      <p>You have {totalItems} items in your cart</p>
-      <p>Total Cost: MWK {cartTotal}</p>
+      <div>
+        <h2>Total Cost: MWK {cartTotal}</h2>
+        <div>
+          <Button aria-controls="simple-menu" color='primary' aria-haspopup="true" onClick={handleClick}>
+            Payment Method<KeyboardArrowDownIcon />
+          </Button>
 
-
-      <div className="Payment">
-        <p>You will pay by:</p>
-        <div className="paymentSelection">
-          <select defaultValue="mo626">
-            <option value="mo626">MO626</option>
-            <option value="Mpamba">Mpamba</option>
-            <option value="Airtel money">
-              Airtel money
-            </option>
-          </select>
-          <p>Special Request</p>
-          <form action="input"> <TextField
-          id="filled-full-width"
-          style={{ margin: 8 }}
-          placeholder="Special Requests"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="filled"
-        />
-          </form>
-          <button onClick={() => {alert('Order Submitted')}}>Submit Order</button>
-
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>Mpamba</MenuItem>
+            <MenuItem onClick={handleClose}>Mo626</MenuItem>
+            <MenuItem onClick={handleClose}>Airtel Money</MenuItem>
+          </Menu>
+        </div>
+        <div className="submit">
+          <Button variant="contained" color='primary' onClick={() => { alert('Order Submitted') }}>Submit Order</Button>
         </div>
       </div>
     </div>
