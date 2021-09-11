@@ -97,7 +97,7 @@ function Cart() {
               Airtel money
             </option>
           </select>
-          <p>SPecial Request</p>
+          <p>Special Request</p>
           <form action="input"> <TextField
           id="filled-full-width"
           style={{ margin: 8 }}
@@ -110,9 +110,8 @@ function Cart() {
           variant="filled"
         />
           </form>
-          <button type="submit" value="Submit" className="submit">
-            Submit Order
-          </button>
+          <button onClick={() => {alert('Order Submitted')}}>Submit Order</button>
+
         </div>
       </div>
     </div>

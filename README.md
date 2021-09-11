@@ -1,6 +1,14 @@
 ## Gege's Confectionaries
 
-This is a confectionaries shop where you can order cakes and go through the various sweet and savory options built with React. 
+I am building confectionaries shop where you can order cakes and go through the various sweet and savory options built with React. The backend is built with
+
+
+```
+Features:
+- A customer can select a product based on its category
+-  A customer can add a product to the cart
+- A customer can send their submit their order and their prefered payment method
+```
 
 ## Available Scripts
 

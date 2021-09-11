@@ -12,7 +12,7 @@ function Contact() {
       <div className="rightSide">
         <h1> Contact Us</h1>
 
-        <form id="contact-form" method="POST">
+        <form id="contact-form" action="mailto:kumidee@gmail.com" method="POST" enctype="text/plain">
           <label htmlFor="name">Full Name</label>
           <input name="name" placeholder="Enter full name..." type="text" />
           <label htmlFor="email">Email</label>
@@ -24,7 +24,7 @@ function Contact() {
             name="message"
             required
           ></textarea>
-          <button type="submit"> Send Message</button>
+          <button onClick={() => {alert('Message sent')}}>Send Message</button>
         </form>
       </div>
     </div>
